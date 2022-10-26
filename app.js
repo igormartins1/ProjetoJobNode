@@ -27,7 +27,7 @@ db
 
 //criando uma rota 
 app.get('/',(req,resp)=>{
-    resp.send('testeIg');
+    resp.send('testeIgor');
 })
 
 
