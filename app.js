@@ -1,15 +1,21 @@
-const express = require('express');
-const app = express();
-const db = require('../ProjetoJobNode/db/conection');
+const express   = require('express');
+const app       = express();
+const db        = require('../ProjetoJobNode/db/conection');
+const bodyParser= require('body-parser');
 
-// comum colocar uma porta em constante e que depois poderá se tornar uma variavel 
+// comum colocar uma porta em constante e que depois poderï¿½ se tornar uma variavel 
 
 const PORT=3000;
 
 // Para escutar a Rota 
 app.listen(PORT, function(){
-    console.log(`O express está rodando na porta ${PORT}`)
+    console.log(`O express estï¿½ rodando na porta ${PORT}`)
 })
+
+
+//Chamando o Body-Parser
+
+app.use(bodyParser.urlencoded({extended:false}));
 
 
 //Criando Conexao 
