@@ -1,7 +1,15 @@
+const { application } = require('express');
 const express =require('express'); // Lida com a parte de rotas 
 const router = express.Router(); // obj de rota do express
 
+
 const Job = require('../models/Job');
+
+//Criando rota 
+router.get('/test',(req,resp)=>{
+    resp.send('Deu certo');
+});
+
 
 
 //adicionar job via Post
@@ -13,7 +21,7 @@ router.post('/add', (req,resp)=>{
 
     //Inserindo Dados
 
-    Job.create({
+    Job.create({          
         title,
         description,
         salary,
@@ -23,9 +31,10 @@ router.post('/add', (req,resp)=>{
 
     })
 
-    
-// promisse 
 
+
+    .then(()=>resp.redirect('/'))
+    .catch(err=> console.log(err));
 
 })
 

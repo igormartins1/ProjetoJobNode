@@ -9,7 +9,7 @@ const PORT=3000;
 
 // Para escutar a Rota 
 app.listen(PORT, function(){
-    console.log(`O express est� rodando na porta ${PORT}`)
+    console.log(`O express está rodando na porta ${PORT}`)
 })
 
 
@@ -35,5 +35,8 @@ db
 app.get('/',(req,resp)=>{
     resp.send('testeIgor');
 })
+
+
+app.use('/jobs', require('./routes/jobs'));
 
 
