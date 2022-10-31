@@ -2,6 +2,7 @@ const express   = require('express');
 const app       = express();
 const db        = require('../ProjetoJobNode/db/conection');
 const bodyParser= require('body-parser');
+const router    = require('../ProjetoJobNode/routes/jobs')
 
 // comum colocar uma porta em constante e que depois poder� se tornar uma variavel 
 
@@ -37,6 +38,6 @@ app.get('/',(req,resp)=>{
 })
 
 
-app.use('/jobs', require('./routes/jobs'));
+router.use('/jobs', require('./routes/jobs'));
 
 

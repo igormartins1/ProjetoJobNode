@@ -3,6 +3,7 @@ const express =require('express'); // Lida com a parte de rotas
 const router = express.Router(); // obj de rota do express
 
 
+
 const Job = require('../models/Job');
 
 //Criando rota 
@@ -38,5 +39,6 @@ router.post('/add', (req,resp)=>{
 
 })
 
+module.exports=router;
 
 
